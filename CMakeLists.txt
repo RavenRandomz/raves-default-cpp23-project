@@ -1,11 +1,15 @@
-cmake_minimum_required(VERSION 4.2.0)
 set(CMAKE_CXX_STANDARD 23)
-project(derp)
-set(CMAKE_GENERATOR Ninja)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(module_test)
+cmake_minimum_required(VERSION 4.2.0)
+project(derp)
+
+add_executable(
+    module_test
+    src/main.cpp
+    src/test.cppm
+)
 
 target_sources(
     module_test PRIVATE
@@ -16,6 +20,27 @@ target_sources(
         src/test.cppm
 )
 
-target_sources(module_test PRIVATE
-    src/main.cpp
-)
+#cmake_minimum_required(VERSION 3.30)
+#project(main)
+#
+#set(CMAKE_CXX_STANDARD 23)
+#set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD ON)
+#
+## Clang because of modules support
+#if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+#    if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 18.1.2)
+#        message(FATAL_ERROR "Clang version must be at least 18.1.2")
+#    endif()
+#else()
+#    message(FATAL_ERROR "Only Clang is supported")
+#endif()
+#
+#add_executable(
+#    main
+#    src/main.cpp
+#    src/test.cppm)
+#target_sources(main PUBLIC FILE_SET allModules TYPE CXX_MODULES FILES src/test.cppm)
+#target_compile_options(main PRIVATE
+##        -stdlib=libc++
+#)
