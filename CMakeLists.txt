@@ -26,6 +26,7 @@ message(TRACE ${REGULAR_SRC})
 cmake_minimum_required(VERSION 4.2.0)
 project(derp CXX)
 find_package(GTest REQUIRED)
+find_package(Boost REQUIRED)
 
 add_executable(
     wordlr
@@ -42,8 +43,10 @@ target_sources(
     ${MODULES_SRC}
 )
 
-list(FILTER TESTING_SRC EXCLUDE REGEX "${PROJECT_SOURCE_DIR}/src/main.cpp" )
-
+target_link_libraries(
+    wordlr
+    ${Boost_LIBRARIES}
+)
 add_executable(
     unit_test
     ${TEST_SRC}
@@ -62,6 +65,7 @@ target_sources(
 
 target_link_libraries(
     unit_test
+    ${Boost_LIBRARIES}
     GTest::GTest
     GTest::Main
     GTest::gmock
