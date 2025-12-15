@@ -42,10 +42,12 @@ target_sources(
     ${MODULES_SRC}
 )
 
+list(FILTER TESTING_SRC EXCLUDE REGEX "${PROJECT_SOURCE_DIR}/src/main.cpp" )
+
 add_executable(
     unit_test
     ${TEST_SRC}
-    ${REGULAR_SRC}
+    ${TESTING_SRC}
     ${MODULES_SRC}
 )
 
@@ -68,6 +70,7 @@ target_link_libraries(
 include (GoogleTest test)
 
 gtest_discover_tests(unit_test)
+
 
 #cmake_minimum_required(VERSION 3.30)
 #project(main)
