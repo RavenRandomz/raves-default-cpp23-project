@@ -28,13 +28,13 @@ project(derp CXX)
 find_package(GTest REQUIRED)
 
 add_executable(
-    module_test
+    wordlr
     ${REGULAR_SRC}
     ${MODULES_SRC}
 )
 
 target_sources(
-    module_test PRIVATE
+    wordlr PRIVATE
     FILE_SET all_my_modules TYPE CXX_MODULES
     BASE_DIRS
         ${PROJECT_SOURCE_DIR}
