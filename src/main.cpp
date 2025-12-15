@@ -1,12 +1,9 @@
 import derp;
+import word.AnotherTestWord;
 import word.Word;
-#include <print>
 
 
 int main()
 {
-    wordlr::Word hi{};
-    printHidden();
-    std::print("Fuck");
     return 0;
 }
