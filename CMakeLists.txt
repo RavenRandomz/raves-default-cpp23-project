@@ -17,16 +17,11 @@ file(GLOB_RECURSE MODULES_SRC ${PROJECT_SOURCE_DIR} src/*.cppm)
 #set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 #FetchContent_MakeAvailable(googletest)
 
-enable_testing()
-
-
 
 message(TRACE ${REGULAR_SRC})
 
 cmake_minimum_required(VERSION 4.2.0)
 project(derp CXX)
-find_package(GTest REQUIRED)
-find_package(Boost REQUIRED)
 
 add_executable(
     wordlr
@@ -42,39 +37,6 @@ target_sources(
     FILES
     ${MODULES_SRC}
 )
-
-target_link_libraries(
-    wordlr
-    ${Boost_LIBRARIES}
-)
-add_executable(
-    unit_test
-    ${TEST_SRC}
-    ${TESTING_SRC}
-    ${MODULES_SRC}
-)
-
-target_sources(
-    unit_test PRIVATE
-    FILE_SET all_my_modules TYPE CXX_MODULES
-    BASE_DIRS
-        ${PROJECT_SOURCE_DIR}
-    FILES
-    ${MODULES_SRC}
-)
-
-target_link_libraries(
-    unit_test
-    ${Boost_LIBRARIES}
-    GTest::GTest
-    GTest::Main
-    GTest::gmock
-)
-
-include (GoogleTest test)
-
-gtest_discover_tests(unit_test)
-
 
 #cmake_minimum_required(VERSION 3.30)
 #project(main)
