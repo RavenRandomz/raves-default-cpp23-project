@@ -1,4 +1,4 @@
-# Rave's Default C++-23 Project
+# Rave's Default C++23 Project
 
 This is a simple, dirty, default C++23 project.
 
