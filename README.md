@@ -52,8 +52,8 @@ Subsequent builds
 ```
 cd build
 ninja
-# or
-ninja 
+# or to utilize parallel processing for that 1337sp33d
+ninja -j 0 
 
 ```
 
