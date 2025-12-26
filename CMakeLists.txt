@@ -21,6 +21,12 @@ add_executable(
     ${MODULES_SRC}
 )
 
+# Deal with windows bullshit 
+# Credit to Challanger_ and GreenJD3: https://www.reddit.com/r/cpp_questions/comments/1bsh7nd/undefined_reference_to_std_open_terminal/
+if (MINGW AND CMAKE_CXX_COMPILER_ID STREQUAL GNU)
+  target_link_libraries(${PROJECT_NAME} stdc++exp) # std:: print, println, ...
+endif()
+
 # Support for header files (.hpp and .h), assumes all header files are in /src
 # You can change this to /include if you are using that form of header project structure
 target_include_directories(leet PRIVATE ${PROJECT_SOURCE_DIR}/src)
