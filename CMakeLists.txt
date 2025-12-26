@@ -21,6 +21,9 @@ add_executable(
     ${MODULES_SRC}
 )
 
+# Support for header files (.hpp and .h), assumes all header files are in /src
+# You can change this to /include if you are using that form of header project structure
+target_include_directories(leet PRIVATE ${PROJECT_SOURCE_DIR}/src)
 # You need to mark files as modules even if tey are listed in the sources of the executable
 target_sources(
     leet PRIVATE
