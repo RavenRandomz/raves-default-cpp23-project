@@ -124,6 +124,10 @@ to search for new files during the build
 
 If you want to manually list sources, it's pretty obvious on how to adapt it, CMake documentation has plenty of examples. I just don't get the redundancy.
 
+# License
+This is dual licensed under UNLICENSE and GPLv3. GPLv3 is to prevent patent and DRM aggression. Theoretically, someone could use this as part of a patent
+or DRM or trade secret, so GPLv3 licensing prevents them from being able to sue eveyrone use for using this code. It's stupid, but ay, it's the law and lawyers :P
+
 # Adding more advanced features + project reference
 Check out the CMakelists.txt here - it adds gtest, boost (examples of dependencies), traditional include and cpp files, and multiple builds:
 [https://github.com/RavenRandomz/wordlr]
