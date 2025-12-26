@@ -1,7 +1,7 @@
 module;
 
 #include <iostream>
-
+#include <print>
 
 export module derp;
 int hidden()
@@ -12,4 +12,5 @@ int hidden()
 export void printHidden()
 {
     std::cout << "The hidden " << hidden() << '\n';
+    std::println("This is a print test: You have C+23, yay!");
 }
