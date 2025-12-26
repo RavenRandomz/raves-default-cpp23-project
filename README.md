@@ -86,9 +86,20 @@ cmake .. -DCMAKE_BUILD_TYPE=Release #Ninja is cross platform and is one of the f
 
 # Recommended ide
 Use nvim with coc-clangd for completion (this generates a compile-commads.json). It works out of the box ^_^
-Also, if you want to become better, code without lsp but with auto-indent. https://news.ycombinator.com/item?id=42492508
+
+Also, if you want to become better, code without lsp but with auto-indent. Read here: [https://news.ycombinator.com/item?id=42492508]
+
 It forces you to reckon with poorly structured project design and improves memory. Slightly slower, but forces your to make
 your code architecture efficient and friendly.
+
+yes, code completion is a tool, and AI might be a tool, but consider the MERIT of what you are doing. If you are just doing what a manager
+who cannot code is doing, then you are no longer a coder. If you cannot write syntax but just trust/hope the coder is correct, then you are not a coder.
+If you cannot debug, if you are just saying "please fix" etc.
+
+Likewise, code completion can lead someone to forget or atrophy in codebase knowledge. Muscle memory is very powerful. Try an experiment: try to code
+without code completion and see how well you can do so. If it didn't atrophy you ability, you should be able to code without stuttering.
+
+If I am running in a race and I use a car, yes, it is a tool, but I do not have the merit of a runner.
 
 I will say however, that I find the goto feature (part of clangd and general lsp) really useful for unfamiliar codebases/exploring them.
 
@@ -98,10 +109,14 @@ I'm not just a command-line addict. In some environments, you won't be allowed t
 work without a desktop gui is priceless. It also gives you insight into how things are compiled etc.
 
 
-https://neovim.io/
-https://github.com/junegunn/vim-plug
-https://github.com/neoclide/coc.nvim
-github.com/clangd/coc-clangd
+[https://neovim.io/]
+
+[https://github.com/junegunn/vim-plug]
+
+[https://github.com/neoclide/coc.nvim]
+
+[github.com/clangd/coc-clangd]
+
 
 # Architecture notes
 This allows you to utilize modules. Note that whenever you add a file, you must use touch on the CMakeLists.txt to change its modified time so that cmake can be triggered
@@ -111,7 +126,7 @@ If you want to manually list sources, it's pretty obvious on how to adapt it, CM
 
 # Adding more advanced features + project reference
 Check out the CMakelists.txt here - it adds gtest, boost (examples of dependencies), traditional include and cpp files, and multiple builds:
-https://github.com/RavenRandomz/wordlr
+[https://github.com/RavenRandomz/wordlr]
 
 Shameless self-advert, but this project was adapted from this.
 # Wordlr module architeture notes
