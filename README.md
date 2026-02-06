@@ -55,7 +55,7 @@ is direct support in archlinux, too! Archlinux! - A masochistic distro.)
 Do the below in order
 Downloading
 ```
-https://github.com/RavenRandomz/ravens-default-cpp23-project.git
+git clone https://github.com/RavenRandomz/ravens-default-cpp23-project.git
 ```
 Generating
 ```
