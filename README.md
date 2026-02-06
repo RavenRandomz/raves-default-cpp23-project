@@ -26,6 +26,23 @@ By talking to fellow devs, you'll make good friends. Have a mustard seed of fait
 # Installing a compiler
 Look up C++ compiler for your platform. Liux is the easiest. Windows is the 10th circle of damnation.
 
+## Installing Build Tools - Common Linux
+
+Debian, Ubuntu, Mint - Fedora
+
+```
+sudo apt install build-essential
+```
+
+Fedora -
+
+```
+sudo dnf group install c-development development-tools
+```
+
+## Installing Mingw - Windows
+https://www.geeksforgeeks.org/cpp/installing-mingw-tools-for-c-c-and-changing-environment-variable/
+
 # Installing Ninja
 https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages
 
