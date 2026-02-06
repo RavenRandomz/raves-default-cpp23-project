@@ -83,7 +83,10 @@ ninja # Will automatically run cmake
 Alternatively when you add a file - imo, just install coreutils, idk why windows hasn't shipped with them: https://gnuwin32.sourceforge.net/packages/coreutils.htm
 ```
 vim ../CMakeLists.txt # (or whever you use)
-# Edit the file in some manner, add a
+# Edit the file in some manner, add a space, save it, then remove the space, 
+then save it. The point is to change the last modified time and date to trigger
+cmake to search for the new files/regenerate. The ninja config will 
+automatically trigger for subsequent builds
 ```
 
 When you are getting into gdb
@@ -100,6 +103,8 @@ When you want a build without debug symbols/assertions https://gnuwin32.sourcefo
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release #Ninja is cross platform and is one of the few project types that supports modules at the moment with CMakef
 ```
+
+For more advanced users, look up using ninja multi-config as an option.
 
 # Recommended ide
 Use nvim with coc-clangd for completion (this generates a compile-commads.json). It works out of the box ^_^
